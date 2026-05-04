@@ -1,6 +1,8 @@
-import pandas as pd
+
 
 def df_melt(dataset):
+    
+    import pandas as pd
     df_long = dataset.melt(
         id_vars=['day', 'date', 'type'], 
         value_vars=['morning', 'noon', 'night'],
