@@ -5,22 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-    
-# Get the absolute path of the current script (BP.py)
-current_script_path = os.path.abspath(__file__)
-# Get the directory containing the current script
-current_script_dir = os.path.dirname(current_script_path)
-# Get the parent directory of the current script's directory
-parent_dir = os.path.dirname(current_script_dir)
-# Construct the path to the 'util' folder
-util_path = os.path.join(parent_dir, 'Utils')
 
-# Add the 'util' folder path to sys.path if it's not already there
-if util_path not in sys.path:
-    sys.path.append(util_path)
-
-# Now you can import def_melt
-from utils.def_melt import def_melt
 
 # import the RTL module
 
@@ -132,18 +117,6 @@ for d, n in zip(melted_list,name):
 
 # Analysis of Left hand
 
-fig, ax = plt.subplots(3,1,figsize=(10,7))
-
-ax[0].plot(df_p['measurement'], color = 'red')
-ax[0].set_title('Morning, Left Hand Total Pulse')
-
-ax[1].plot(df_s['measurement'])
-ax[1].set_title('Noon, Left Hand Total Systolic')
-
-ax[2].plot(df_d['measurement'])
-ax[2].set_title('Night, Left Hand Diastolic')
-plt.tight_layout()
-plt.show()
 
 
 
