@@ -19,6 +19,29 @@ def df_melt(dataset):
 
 
 
+def correct_order_timeOfDay(df):
+    
+    import pandas as pd
+    
+    order = ["morning", "noon", "night"]
+
+    df["time_of_day"] = pd.Categorical(
+        df["time_of_day"],
+        categories=order,
+        ordered=True
+    )
+
+    df = df.sort_values(["time_of_day"])
+    df = (
+    df.sort_values("time_of_day", ascending= True)
+      .reset_index(drop=True)
+)
+    return df
+        
+
+
+
+
 # class Make_dataframe:
     
 #     # ''''
