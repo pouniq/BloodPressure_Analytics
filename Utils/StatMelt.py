@@ -1,11 +1,11 @@
-def Average_Melt(meltedList, name):
+def Average_Melt(df_cols, name):
     
-    for d, n in zip(meltedList,name):
+    for d, n in zip(df_cols,name):
         print('-'*24 , f'Average value for {n}', ''*25)
-        print(d.groupby('time_of_day', observed=False )['measurement'].mean())
+        print(df.groupby('time_of_day', observed=False )[n].mean())
         print('-'*50)
-        
-        
+
+            
         
 
 
